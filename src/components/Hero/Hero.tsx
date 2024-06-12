@@ -3,6 +3,7 @@ import { ArrowDown } from "lucide-react";
 import AOS from "aos";
 import "aos/dist/aos.css";
 import { useEffect } from "react";
+import { BackgroundBeams } from "../ui/background-beams";
 
 export function HeroSection() {
   useEffect(() => {
@@ -43,6 +44,7 @@ export function HeroSection() {
           </a>
         </div>
       </div>
+      <BackgroundBeams />
     </div>
   );
 }

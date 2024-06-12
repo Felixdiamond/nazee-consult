@@ -1,4 +1,3 @@
-import React from "react";
 import "./Hub.css";
 import pmhImage from "../../assets/pmh.jpg";
 

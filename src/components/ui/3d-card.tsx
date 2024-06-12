@@ -86,7 +86,6 @@ export const CardItem = ({
   children,
   className,
   translateZ = 0,
-  style,
 }: {
   as?: React.ElementType;
   children: React.ReactNode;

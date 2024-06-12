@@ -7,15 +7,20 @@ import "aos/dist/aos.css";
 
 export function Description() {
   const [activeSection, setActiveSection] = useState("values");
+  type ColorKey = "#FFA726" | "#42A5F5" | "#66BB6A" | "#AB47BC";
 
-  const colorMap = {
+  const colorMap: Record<ColorKey, string> = {
     "#FFA726": "bg-orange",
     "#42A5F5": "bg-blue",
     "#66BB6A": "bg-green",
     "#AB47BC": "bg-purple",
   };
 
-  const values = [
+  const values: Array<{
+    icon: typeof Star | typeof Target | typeof Globe | typeof Book;
+    text: string;
+    color: ColorKey;
+  }> = [
     { icon: Star, text: "Excellence in Education", color: "#FFA726" },
     { icon: Target, text: "Innovation in Management", color: "#42A5F5" },
     { icon: Globe, text: "Global Collaboration", color: "#66BB6A" },
