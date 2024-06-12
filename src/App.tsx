@@ -11,9 +11,7 @@ import { Services } from "./components/Services/Services";
 function App() {
   return (
     <>
-      <div className="absolute top-0 left-0 w-full">
       <NavBar />
-      </div>
       <HeroSection />
       <Explanation />
       <Description /> 
