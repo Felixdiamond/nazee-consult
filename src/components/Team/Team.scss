@@ -1,0 +1,172 @@
+.slider {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  .people__slide {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: min-content;
+    padding-left: 11rem;
+    .swiper-slide {
+      width: 297px;
+      padding: 30px 0;
+      transform: scale(0.75);
+      transition: 0.3s;
+
+      .people__card {
+        display: flex;
+        flex-flow: column;
+        align-items: center;
+        width: 276px;
+        padding: 25px 30px 30px;
+        border-radius: 48px;
+        $color1: #ff610f;
+        $color2: #7f00ff;
+        background: linear-gradient(135deg, #ff610f, #7f00ff);
+
+        transition: 0.3s;
+
+        .people__image {
+          position: relative;
+          padding: 4px;
+          width: 150px;
+          height: 150px;
+          margin-bottom: 15px;
+          overflow: hidden;
+          border-radius: 100%;
+          border: 5px solid rgba(#fff, 0.5);
+
+          img {
+            position: absolute;
+            z-index: 1;
+            top: 50%;
+            left: 50%;
+            width: 100%;
+            transform: translate(-50%, -50%);
+          }
+        }
+
+        .people__info {
+          display: flex;
+          flex-flow: column;
+          align-items: center;
+        }
+
+        .people__social {
+          list-style: none;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          margin-bottom: 20px;
+          padding-left: 0;
+
+          li {
+            padding: 0 5px;
+
+            a {
+              padding: 5px;
+              color: #fff;
+            }
+          }
+        }
+
+        .people__name {
+          margin-bottom: 10px;
+        }
+
+        .people__position {
+          margin-bottom: 15px;
+          font-size: 14px;
+          color: #fff;
+        }
+
+        .people__desc {
+          margin-bottom: 20px;
+          font-size: 13px;
+          line-height: 1.4;
+          color: #fff;
+          text-align: center;
+        }
+
+        .people__btn {
+          display: inline-flex;
+
+          span {
+            color: #fff;
+            border-radius: 10px;
+            padding: 10px 20px;
+            border: solid 1px #fff;
+            transition: 0.25s;
+
+            &:hover {
+              background-color: #fff;
+              color: #880085;
+            }
+          }
+        }
+      }
+
+      &.swiper-slide-active {
+        animation-name: elastic1;
+        animation-duration: 0.6s;
+        animation-fill-mode: forwards;
+        animation-timing-function: ease-in-out;
+      }
+
+      &.swiper-slide-active {
+        animation-name: elastic1_sp;
+      }
+
+      &:nth-child(even) .people__card {
+        transform: rotate(-5deg);
+      }
+
+      &:nth-child(odd) .people__card {
+        transform: rotate(5deg);
+      }
+    }
+  }
+}
+
+@keyframes elastic1 {
+  0% {
+    transform: scale(1);
+  }
+  40% {
+    transform: scale(1.4);
+  }
+  55% {
+    transform: scale(1.27);
+  }
+  70% {
+    transform: scale(1.36);
+  }
+  85% {
+    transform: scale(1.31);
+  }
+  100% {
+    transform: scale(1.33);
+  }
+}
+
+@keyframes elastic1_sp {
+  0% {
+    transform: scale(0.75);
+  }
+  40% {
+    transform: scale(1.05);
+  }
+  55% {
+    transform: scale(0.95);
+  }
+  70% {
+    transform: scale(1.02);
+  }
+  85% {
+    transform: scale(0.98);
+  }
+  100% {
+    transform: scale(1);
+  }
+}

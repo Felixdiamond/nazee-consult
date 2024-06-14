@@ -21,10 +21,10 @@ export function Description() {
     text: string;
     color: ColorKey;
   }> = [
-    { icon: Star, text: "Excellence in Education", color: "#FFA726" },
-    { icon: Target, text: "Innovation in Management", color: "#42A5F5" },
+    { icon: Target, text: "Innovation", color: "#42A5F5" },
+    { icon: Star, text: "Excellence", color: "#FFA726" },
     { icon: Globe, text: "Global Collaboration", color: "#66BB6A" },
-    { icon: Book, text: "Knowledge Empowerment", color: "#AB47BC" },
+    { icon: Book, text: "Continuous development", color: "#AB47BC" },
   ];
 
   useEffect(() => {
@@ -98,9 +98,11 @@ export function Description() {
         >
           <h2 className="desc-subtitle">Our Mission</h2>
           <p className="desc-text">
-            To revolutionize project management by providing avant-garde
-            resources, nurturing a network of thought leaders, and pioneering
-            innovative practices.
+            Our mission is to provide comprehensive, accessible, and practical
+            education and support to aspiring and existing project managers
+            worldwide, equipping them with the skills, knowledge, and confidence
+            necessary to succeed in their roles and drive successful project
+            outcomes in any industry or context.
           </p>
         </div>
         <div
@@ -110,9 +112,10 @@ export function Description() {
         >
           <h2 className="desc-subtitle">Our Vision</h2>
           <p className="desc-text">
-            To forge a future where every project manager is a visionary,
-            capable of orchestrating complex projects and propelling
-            organizations towards unprecedented success.
+            At the forefront of project management education, our vision is to
+            ignite passion, foster creativity, and cultivate a culture of
+            continuous improvement, where every project manager has the
+            confidence and capability to navigate complexities and achieve.
           </p>
         </div>
       </div>

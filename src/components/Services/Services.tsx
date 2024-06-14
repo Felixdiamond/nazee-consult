@@ -6,18 +6,12 @@ const services = [
   {
     id: "03",
     title: "Project Management",
-    subtitle: "Scholarship",
-    icon: "🎓",
-  },
-  {
-    id: "04",
-    title: "Project Management",
     subtitle: "Community Hub",
     icon: "👥",
   },
-  { id: "05", title: "Templates &", subtitle: "Worksheets", icon: "📝" },
+  { id: "04", title: "Templates &", subtitle: "Worksheets", icon: "📝" },
   {
-    id: "06",
+    id: "05",
     title: "Global Certification",
     subtitle: "Exam Prep (2 Weeks)",
     icon: "🌍",

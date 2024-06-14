@@ -16,7 +16,7 @@ export function BookInfo() {
   return (
     <div className="book-info flex flex-col items-center justify-center">
       <h1 className="book-info__heading" data-aos="fade-up">
-        Our Book
+        Our Best Selling Book
       </h1>
       <div className="book-info__content" data-aos="fade-up">
         <div className="book-info__card" data-aos="fade-right">
@@ -38,6 +38,11 @@ export function BookInfo() {
           </CardContainer>
         </div>
         <div className="book-info__description" data-aos="fade-left">
+          <p className="book-info__text">
+            We are committed to providing our students with exceptional
+            education resources while also delivering world class project
+            management service
+          </p>
           <p className="book-info__text">
             This comprehensive guide offers an in-depth exploration of 30
             essential skills that will elevate your project management practices
