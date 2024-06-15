@@ -7,9 +7,12 @@ import Footer from "./components/Footer/Footer";
 import { HeroSection } from "./components/Hero/Hero";
 import { Metrics } from "./components/Metrics/Metrics";
 import { NavBar } from "./components/NavBar/NavBar";
+import { PMBtn } from "./components/PMBtn/PMBtn";
 import { Hub } from "./components/PMH/Hub";
 import { Services } from "./components/Services/Services";
+import { SupportBtn } from "./components/SupportBtn/SupportBtn";
 import { Team } from "./components/Team/Team";
+import { Testimonials } from "./components/Testimonials/Testimonials";
 
 function App() {
   return (
@@ -28,6 +31,9 @@ function App() {
       </div>
       <Team />
       <Metrics />
+      <PMBtn />
+      <Testimonials />
+      <SupportBtn />
       <Footer />
     </>
   );
