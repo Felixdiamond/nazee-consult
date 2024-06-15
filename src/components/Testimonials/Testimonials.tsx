@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import "./Testimonials.css";
 import testimonial1 from "../../assets/testimonial-1.jpg";
 import testimonial2 from "../../assets/testimonial-2.jpg";
