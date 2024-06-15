@@ -1,7 +1,13 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
+import AOS from "aos";
+import "aos/dist/aos.css";
 import "./PMBtn.css";
 
 export function PMBtn() {
+  useEffect(() => {
+    AOS.init();
+  }, []);
+
   const [isAnimating, setIsAnimating] = useState(false);
 
   const handleClick = () => {
@@ -11,13 +17,15 @@ export function PMBtn() {
 
   return (
     <section className="pm-section">
-      <h2 className="pm-heading">Ready to elevate your project?</h2>
-      <p className="pm-subheading">
+      <h2 className="pm-heading" data-aos="fade-up">
+        Ready to elevate your project?
+      </h2>
+      <p className="pm-subheading" data-aos="fade-up" data-aos-delay="100">
         Looking to add some amazing project management talent to your team? At
         Nazee Consult, we have a pool of highly skilled project managers and
         eager interns ready to jump in and make a difference. Our candidates are
-        <b> well-trained, experienced, and up-to-date</b> with the latest industry
-        trends to help your projects succeed.
+        <b> well-trained, experienced, and up-to-date</b> with the latest
+        industry trends to help your projects succeed.
       </p>
       <div className="pm-btn-container">
         <button
