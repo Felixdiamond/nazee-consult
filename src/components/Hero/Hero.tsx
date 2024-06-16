@@ -6,6 +6,7 @@ import React, { useEffect } from "react";
 import { BackgroundBeams } from "../ui/background-beams";
 import { Explanation } from "../Explanation/Explanation";
 import { Link } from "react-router-dom";
+import { RefObject } from "react";
 
 export function HeroSection() {
   useEffect(() => {
@@ -16,11 +17,10 @@ export function HeroSection() {
     });
   }, []);
 
-  const expRef = React.useRef(null);
+  const expRef = React.useRef<HTMLDivElement>(null);
 
-  const scrollDown = (ref) => {
-    // mobile responsive smooth scroll to the next section
-    ref.current.scrollIntoView({ behavior: "smooth" });
+  const scrollDown = (ref: RefObject<HTMLDivElement>) => {
+    ref.current?.scrollIntoView({ behavior: "smooth" });
   };
 
   return (

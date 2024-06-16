@@ -1,4 +1,3 @@
-import React from "react";
 import {
   Box,
   Button,
@@ -10,6 +9,7 @@ import {
   List,
   ListItem,
 } from "@chakra-ui/react";
+import React, { ReactNode } from 'react';
 import {
   CheckCircle,
   Users,
@@ -19,7 +19,11 @@ import {
 } from "lucide-react";
 import "./CertProgram.css";
 
-const IconWrapper = ({ children }) => (
+interface IconWrapperProps {
+  children: ReactNode;
+}
+
+const IconWrapper: React.FC<IconWrapperProps> = ({ children }) => (
   <Box color="green.500" mr={2}>
     {children}
   </Box>

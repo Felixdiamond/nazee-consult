@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import { useEffect } from "react";
 import {
   Box,
   Heading,
@@ -13,15 +13,11 @@ import AOS from "aos";
 import "aos/dist/aos.css";
 import "./DocTemplate.css";
 
-const templateDescriptions = {
-  "Project Charter":
-    "Kickstart your projects with a clear and comprehensive charter that outlines objectives, scope, stakeholders, and deliverables.",
-  "Project Schedule":
-    "Plan and manage your project timelines with ease using our detailed schedule template, complete with milestones and deadlines.",
-  "Project Change Request":
-    "Handle changes seamlessly with our structured request template, ensuring all modifications are documented and approved efficiently.",
-  "Project Closure":
-    "Conclude your projects professionally, capturing lessons learned, final deliverables, and project success metrics.",
+const templateDescriptions: { [key: string]: string } = {
+  "Project Charter": "Kickstart your projects with a clear and comprehensive charter that outlines objectives, scope, stakeholders, and deliverables.",
+  "Project Schedule": "Plan and manage your project timelines with ease using our detailed schedule template, complete with milestones and deadlines.",
+  "Project Change Request": "Handle changes seamlessly with our structured request template, ensuring all modifications are documented and approved efficiently.",
+  "Project Closure": "Conclude your projects professionally, capturing lessons learned, final deliverables, and project success metrics.",
 };
 
 export function DocumentationTemplate() {
