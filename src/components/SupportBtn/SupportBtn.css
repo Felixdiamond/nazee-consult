@@ -7,7 +7,7 @@
 }
 
 .support-btn-container button {
-  background-color: #ff5e57;
+  background-color: #FF610F;
   color: white;
   border: none;
   border-radius: 7px;
@@ -30,7 +30,7 @@
 }
 
 .support-btn-container button:hover {
-  background-color: #ff3f34;
+  background-color: #FF610F;
   transform: scale(1.1);
 }
 

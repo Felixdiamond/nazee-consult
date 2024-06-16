@@ -1,23 +1,28 @@
-import { ChakraProvider } from "@chakra-ui/react";
-import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
-import "./App.css";
-import { HomePage } from "./components/HomePage/HomePage";
-import { ServicesPage } from "./components/ServicesPage/ServicesPage";
+import { lazy, Suspense } from 'react';
+import { ChakraProvider } from '@chakra-ui/react';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import './App.css';
+import LoadingScreen from './components/LoadingScreen/LoadingScreen';
+
+const HomePage = lazy(() => import('./components/HomePage/HomePage'));
+const ServicesPage = lazy(() => import('./components/ServicesPage/ServicesPage'));
 
 function App() {
   return (
     <Router>
-      <Routes>
-        <Route path="/" element={<HomePage />} />
-        <Route
-          path="/services"
-          element={
-            <ChakraProvider>
-              <ServicesPage />
-            </ChakraProvider>
-          }
-        />
-      </Routes>
+      <Suspense fallback={<LoadingScreen />}>
+        <Routes>
+          <Route path="/" element={<HomePage />} />
+          <Route
+            path="/services"
+            element={
+              <ChakraProvider>
+                <ServicesPage />
+              </ChakraProvider>
+            }
+          />
+        </Routes>
+      </Suspense>
     </Router>
   );
 }

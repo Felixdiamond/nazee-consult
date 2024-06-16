@@ -12,7 +12,7 @@ import { Testimonials } from "../Testimonials/Testimonials";
 import Footer from "../Footer/Footer";
 import "./HomePage.scss";
 
-export function HomePage() {
+export const HomePage = () => {
   return (
     <>
       <NavBar />
@@ -23,9 +23,7 @@ export function HomePage() {
       <Services />
       <Hub />
       <div className="team-header">
-        <h1>
-          Meet the Team.
-        </h1>
+        <h1>Meet the Team.</h1>
       </div>
       <Team />
       <Metrics />
@@ -34,4 +32,6 @@ export function HomePage() {
       <Footer />
     </>
   );
-}
+};
+
+export default HomePage;
