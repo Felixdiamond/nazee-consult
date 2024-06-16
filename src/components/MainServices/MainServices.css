@@ -1,0 +1,45 @@
+/* MainServices.css */
+
+/* You can keep this file minimal since most styling is handled by Chakra UI */
+
+/* Custom hover effect for the service cards */
+.chakra-stack[role="group"]:hover {
+  transform: translateY(-5px);
+  transition: transform 0.3s ease;
+}
+
+/* Custom styling for the intro section if needed */
+body {
+  color: #333;
+}
+
+.services-intro-card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.services-intro-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+}
+
+@keyframes gradientAnimation {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+/* Responsive font sizes */
+@media (max-width: 480px) {
+  .chakra-heading {
+    font-size: 1.75rem !important;
+  }
+  .chakra-text {
+    font-size: 1rem !important;
+  }
+}

@@ -1,6 +1,7 @@
 import { Mountain, Menu, X } from "lucide-react";
 import "./NavBar.css";
 import { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 
 export function NavBar() {
   const [isMobile, setIsMobile] = useState(window.innerWidth < 768);
@@ -33,10 +34,10 @@ export function NavBar() {
           </button>
         ) : (
           <div className="nav-links flex gap-4 pr-4">
-            <a href="#">Home</a>
-            <a href="#">Services</a>
+            <Link to="/">Home</Link>
+            <Link to="/services">Services</Link>
             <a href="#">About</a>
-            <a href="#">Contact</a>
+            <a href="https://forms.gle/7EihcEP6FV3X5JQSA">Contact</a>
           </div>
         )}
       </div>
@@ -53,16 +54,16 @@ export function NavBar() {
               <X size={24} />
             </button>
             <div className="nav-links flex flex-col gap-4 p-4">
-              <a href="#" onClick={closeMenu}>
+              <Link to="/" onClick={closeMenu}>
                 Home
-              </a>
-              <a href="#" onClick={closeMenu}>
+              </Link>
+              <Link to="/services" onClick={closeMenu}>
                 Services
-              </a>
+              </Link>
               <a href="#" onClick={closeMenu}>
                 About
               </a>
-              <a href="#" onClick={closeMenu}>
+              <a href="https://forms.gle/7EihcEP6FV3X5JQSA" onClick={closeMenu}>
                 Contact
               </a>
             </div>

@@ -1,41 +1,25 @@
+import React from "react";
+import { ChakraProvider } from "@chakra-ui/react";
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import "./App.css";
-import "./Team.scss";
-import { BookInfo } from "./components/BookInfo/BookInfo";
-import { Description } from "./components/Description/Desc";
-import { Explanation } from "./components/Explanation/Explanation";
-import Footer from "./components/Footer/Footer";
-import { HeroSection } from "./components/Hero/Hero";
-import { Metrics } from "./components/Metrics/Metrics";
-import { NavBar } from "./components/NavBar/NavBar";
-import { PMBtn } from "./components/PMBtn/PMBtn";
-import { Hub } from "./components/PMH/Hub";
-import { Services } from "./components/Services/Services";
-import { SupportBtn } from "./components/SupportBtn/SupportBtn";
-import { Team } from "./components/Team/Team";
-import { Testimonials } from "./components/Testimonials/Testimonials";
+import { HomePage } from "./components/HomePage/HomePage";
+import { ServicesPage } from "./components/ServicesPage/ServicesPage";
 
 function App() {
   return (
-    <>
-      <NavBar />
-      <HeroSection />
-      <Explanation />
-      <Description />
-      <BookInfo />
-      <Services />
-      <Hub />
-      <div className="team-header">
-        <h1>
-          Meet the Team.
-        </h1>
-      </div>
-      <Team />
-      <Metrics />
-      <PMBtn />
-      <Testimonials />
-      <SupportBtn />
-      <Footer />
-    </>
+    <Router>
+      <Routes>
+        <Route path="/" element={<HomePage />} />
+        <Route
+          path="/services"
+          element={
+            <ChakraProvider>
+              <ServicesPage />
+            </ChakraProvider>
+          }
+        />
+      </Routes>
+    </Router>
   );
 }
 

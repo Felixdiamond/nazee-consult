@@ -8,6 +8,7 @@ export function SupportBtn() {
     return (
         <div className="support-btn-container">
             <button>
+                <a className="flex" href="https://forms.gle/7EihcEP6FV3X5JQSA">
                 {isDesktop ? (
                     <>
                         <Headphones className="icon" />
@@ -16,6 +17,7 @@ export function SupportBtn() {
                 ) : (
                     <Headphones className="icon" />
                 )}
+                </a>
             </button>
         </div>
     );
