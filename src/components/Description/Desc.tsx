@@ -1,20 +1,19 @@
 import { useState, useEffect } from "react";
 import "./Desc.css";
 import { CardBody, CardContainer, CardItem } from "../ui/3d-card";
-import { Star, Target, Globe, Book, ChevronRight } from "lucide-react";
+import { Star, Target, Globe, Book } from "lucide-react";
 import AOS from "aos";
 import "aos/dist/aos.css";
-import { Link } from "react-router-dom";
 
 export function Description() {
   const [activeSection, setActiveSection] = useState("values");
   type ColorKey = "#FFA726" | "#42A5F5" | "#66BB6A" | "#AB47BC";
 
   const colorMap: Record<ColorKey, string> = {
-    "#FFA726": "bg-orange",
-    "#42A5F5": "bg-blue",
-    "#66BB6A": "bg-green",
-    "#AB47BC": "bg-purple",
+    "#FFA726": "bg-[#7F00FF]",
+    "#42A5F5": "bg-[#7F00FF]",
+    "#66BB6A": "bg-[#7F00FF]",
+    "#AB47BC": "bg-[#7F00FF]",
   };
 
   const values: Array<{
@@ -81,13 +80,13 @@ export function Description() {
                     >
                       {text}
                     </CardItem>
-                    <CardItem
+                    {/* <CardItem
                       translateZ={20}
                       as="p"
                       className="text-sm text-gray-600 text-center"
                     >
                       Shaping the future of project management.
-                    </CardItem>
+                    </CardItem> */}
                   </CardBody>
                 </CardContainer>
               </li>
@@ -121,14 +120,6 @@ export function Description() {
             confidence and capability to navigate complexities and achieve.
           </p>
         </div>
-      </div>
-      <div className="flex items-center justify-center">
-        <button className="shadow-[0_0_0_3px_#000000_inset] px-6 py-2 bg-transparent border border-black dark:border-white dark:text-white text-black rounded-lg font-bold transform hover:-translate-y-1 transition duration-400 flex">
-          <Link to="/services">
-          Our services
-          </Link>
-          <ChevronRight className="ml-1" />
-        </button>
       </div>
     </section>
   );

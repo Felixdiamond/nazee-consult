@@ -63,7 +63,7 @@ export function BookInfo() {
             Your journey to becoming a top-tier project manager starts here.
           </p>
           <div className="book-info__button-container">
-            <Button className="book-info__button flex items-center justify-center gap-2">
+            <Button className="book-info__button flex items-center justify-center gap-2 bg-[#7F00FF]">
               <ShoppingCart size={20} />
               <a
                 href="https://coachneffect.selar.co/675858"
