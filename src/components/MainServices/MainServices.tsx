@@ -90,6 +90,9 @@ export function MainServices() {
 }
 
 function ServiceCard() {
+  function handleBookCall() {
+    window.open('https://paystack.com/pay/oneononecall');
+  }
   return (
     <VStack
       bg={useColorModeValue("white", "gray.800")}
@@ -138,6 +141,7 @@ function ServiceCard() {
         size="lg"
         mt={4}
         alignSelf="center"
+        onClick={handleBookCall}
         _hover={{
           transform: "translateY(-2px)",
           boxShadow: "lg",

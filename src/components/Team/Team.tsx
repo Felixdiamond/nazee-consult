@@ -34,7 +34,7 @@ const teamMembers = [
   },
   {
     name: "Omonua Naomi",
-    position: "Senior Project Manager",
+    position: "PMP",
     image: naomi,
     socialLinks: [
       { icon: Facebook, link: "" },

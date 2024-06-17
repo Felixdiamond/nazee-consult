@@ -105,17 +105,6 @@ export function Explanation() {
           </div>
         </div>
       </section>
-
-      <section className="explanation__section" data-aos="fade-up">
-        <p className="explanation__cta">
-          Ready to master project management? Join us for an engaging,
-          practical, and fun learning journey.{" "}
-          <ArrowRight
-            size={16}
-            style={{ verticalAlign: "middle", marginLeft: "5px" }}
-          />
-        </p>
-      </section>
     </article>
   );
 }

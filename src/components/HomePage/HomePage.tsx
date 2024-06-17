@@ -10,10 +10,14 @@ import { PMBtn } from "../PMBtn/PMBtn";
 import { Testimonials } from "../Testimonials/Testimonials";
 import Footer from "../Footer/Footer";
 import "./HomePage.scss";
-import { Suspense, lazy } from 'react';
+import { Suspense, lazy } from "react";
 import { Skeleton } from "@chakra-ui/react";
 
-const SupportBtn = lazy(() => import('../SupportBtn/SupportBtn').then(module => ({ default: module.SupportBtn })));
+const SupportBtn = lazy(() =>
+  import("../SupportBtn/SupportBtn").then((module) => ({
+    default: module.SupportBtn,
+  }))
+);
 
 const SupportBtnSkeleton = () => (
   <Skeleton
@@ -21,10 +25,10 @@ const SupportBtnSkeleton = () => (
     bottom="20px"
     right="20px"
     borderRadius="md"
-    width={{ base: '48px', md: 'auto' }}
-    height={{ base: '48px', md: 'auto' }}
-    minWidth={{ md: '100px' }}
-    minHeight={{ md: '40px' }}
+    width={{ base: "48px", md: "auto" }}
+    height={{ base: "48px", md: "auto" }}
+    minWidth={{ md: "100px" }}
+    minHeight={{ md: "40px" }}
     zIndex={999}
   />
 );

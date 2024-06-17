@@ -157,7 +157,7 @@ body {
   color: var(--progress-end);
 }
 
-.explanation__cta {
+/* .explanation__cta {
   font-style: italic;
   font-weight: 400;
   text-align: center;
@@ -170,9 +170,8 @@ body {
   color: white;
   border-radius: 8px;
   margin-top: 1rem;
-  /* animation: pulse 1s infinite; */
-  font-size: 0.95rem;
-}
+  /* animation: pulse 1s infinite; 
+} */
 
 
 /* Media queries for larger screens */

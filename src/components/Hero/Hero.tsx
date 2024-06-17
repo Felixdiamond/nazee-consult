@@ -1,5 +1,5 @@
 import "./Hero.css";
-import { ArrowDown } from "lucide-react";
+import { ArrowDown, ArrowRight } from "lucide-react";
 import AOS from "aos";
 import "aos/dist/aos.css";
 import React, { useEffect } from "react";
@@ -37,13 +37,13 @@ export function HeroSection() {
             guidance.
           </p>
           <div className="hero-cta" data-aos="fade-up" data-aos-delay="600">
-            <button className="cta-button" onClick={() => scrollDown(expRef)}>
-              Get Started
-              <ArrowDown size={18} className="arrow-icon" />
+            <button className="cta-button">
+              <Link to={"/services"}>Our Services</Link>
+              <ArrowRight size={18} className="arrow-icon" />
             </button>
-            <Link to="/services" className="learn-more">
-              Contact us
-            </Link>
+            {/* <Link to="/services" className="learn-more">
+              Our services
+            </Link> */}
           </div>
         </div>
         <BackgroundBeams />

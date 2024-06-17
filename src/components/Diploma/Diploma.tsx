@@ -166,6 +166,7 @@ export function Diploma() {
 
           <Flex justifyContent="space-between" alignItems="center">
             <Button
+              margin={"auto"}
               colorScheme="orange"
               size="lg"
               rightIcon={<ChevronDownIcon />}
@@ -173,9 +174,6 @@ export function Diploma() {
             >
               Enroll Now
             </Button>
-            <Badge colorScheme="blue" p={4} borderRadius="full" fontSize="2xl">
-              $200
-            </Badge>
           </Flex>
         </VStack>
       </Container>
