@@ -1,5 +1,5 @@
 import { useEffect, useState, useRef } from "react";
-import { LineChart, Users, ArrowRight } from "lucide-react";
+import { LineChart, Users } from "lucide-react";
 import "./Explanation.css";
 import { TextGenerateEffect } from "../ui/text-generate-effect";
 import AOS from "aos";
