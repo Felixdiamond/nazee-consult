@@ -50,7 +50,7 @@ const Module: React.FC<ModuleProps> = ({ number, title, topics }) => {
           <Badge colorScheme="orange" fontSize="sm" borderRadius="full" px={2}>
             {number}
           </Badge>
-          <Heading size="md">{title}</Heading>
+          <Text size={"xl"}>{title}</Text>
         </HStack>
         {isOpen ? <ChevronUpIcon /> : <ChevronDownIcon />}
       </Flex>
@@ -73,7 +73,7 @@ export function Diploma() {
   const modules = [
     {
       number: 1,
-      title: "MODULE ONE",
+      title: "Module One",
       topics: [
         "Introduction to Project Management",
         "Real-life Project Management solution scenarios",
@@ -85,7 +85,7 @@ export function Diploma() {
     },
     {
       number: 2,
-      title: "MODULE TWO",
+      title: "Module Two",
       topics: [
         "Project Management Life-cycle",
         "Building WBS (Work Breakdown Structure)",
@@ -96,7 +96,7 @@ export function Diploma() {
     },
     {
       number: 3,
-      title: "MODULE THREE",
+      title: "Module Three",
       topics: [
         "Team Building and Leadership",
         "Risk Assessment and Monitoring",
@@ -107,7 +107,7 @@ export function Diploma() {
     },
     {
       number: 4,
-      title: "MODULE FOUR",
+      title: "Module Four",
       topics: [
         "Project Closing",
         "Customer Satisfaction and Lesson-Learned Register",

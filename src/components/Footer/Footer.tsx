@@ -19,9 +19,13 @@ export default function Footer() {
               <Link to="/" className="footer-link">
                 Home
               </Link>
-              <a href="#" className="footer-link">
+              <span className="cursor-pointer footer-link" onClick={() => {
+                document.getElementById("about").scrollIntoView({
+                  behavior: "smooth"
+                });
+              }}>
                 About
-              </a>
+              </span>
               <Link to="/services" className="footer-link">
                 Services
               </Link>

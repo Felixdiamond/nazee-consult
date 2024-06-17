@@ -33,6 +33,8 @@ export function Description() {
 
   return (
     <section className="desc-container">
+      <span id="about" className="pb-6">
+      </span>
       <div className="desc-hero" data-aos="fade-up">
         <h1 className="desc-title">Empowering Project Managers Globally</h1>
         <p className="desc-tagline">
