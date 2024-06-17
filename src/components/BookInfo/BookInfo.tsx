@@ -10,16 +10,19 @@ import { useEffect } from "react";
 
 export function BookInfo() {
   useEffect(() => {
-    AOS.init();
+    AOS.init({
+      duration: 600, // values from 0 to 3000, with step 50ms
+      once: true, // whether animation should happen only once - while scrolling down
+    });
   }, []);
 
   return (
     <div className="book-info flex flex-col items-center justify-center">
-      <h1 className="book-info__heading" data-aos="fade-up">
+      <h1 className="book-info__heading" data-aos="fade-up" data-aos-duration="400">
         Our Best Selling Book
       </h1>
-      <div className="book-info__content" data-aos="fade-up">
-        <div className="book-info__card" data-aos="fade-right">
+      <div className="book-info__content" data-aos="fade-up" data-aos-duration="500">
+        <div className="book-info__card" data-aos="fade-right" data-aos-duration="600" data-aos-delay="100">
           <CardContainer className="cc">
             <CardBody className="bg-transparent">
               <CardItem translateZ={30}>
@@ -37,7 +40,7 @@ export function BookInfo() {
             </CardBody>
           </CardContainer>
         </div>
-        <div className="book-info__description" data-aos="fade-left">
+        <div className="book-info__description" data-aos="fade-left" data-aos-duration="600" data-aos-delay="200">
           <p className="book-info__text">
             We are committed to providing our students with exceptional
             education resources while also delivering world class project
