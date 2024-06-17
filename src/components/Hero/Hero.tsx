@@ -1,12 +1,12 @@
 import "./Hero.css";
-import { ArrowDown, ArrowRight } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import AOS from "aos";
 import "aos/dist/aos.css";
-import React, { useEffect } from "react";
+import { useEffect } from "react";
 import { BackgroundBeams } from "../ui/background-beams";
-import { Explanation } from "../Explanation/Explanation";
+// import { Explanation } from "../Explanation/Explanation";
 import { Link } from "react-router-dom";
-import { RefObject } from "react";
+// import { RefObject } from "react";
 
 export function HeroSection() {
   useEffect(() => {
@@ -17,11 +17,11 @@ export function HeroSection() {
     });
   }, []);
 
-  const expRef = React.useRef<HTMLDivElement>(null);
+  // const expRef = React.useRef<HTMLDivElement>(null);
 
-  const scrollDown = (ref: RefObject<HTMLDivElement>) => {
-    ref.current?.scrollIntoView({ behavior: "smooth" });
-  };
+  // const scrollDown = (ref: RefObject<HTMLDivElement>) => {
+  //   ref.current?.scrollIntoView({ behavior: "smooth" });
+  // };
 
   return (
     <>
@@ -47,9 +47,6 @@ export function HeroSection() {
           </div>
         </div>
         <BackgroundBeams />
-      </div>
-      <div ref={expRef}>
-        <Explanation />
       </div>
     </>
   );

@@ -1,4 +1,3 @@
-import React from "react";
 import {
   Box,
   Flex,
@@ -15,7 +14,15 @@ import test2 from "../../assets/testimonial-2.jpg";
 
 const MotionBox = motion(Box);
 
-const TestimonialCard = ({ name, role, image, testimonial, index }) => {
+interface TestimonialCardProps {
+  name: string;
+  role: string;
+  image: string;
+  testimonial: string;
+  index: number;
+}
+
+const TestimonialCard = ({ name, role, image, testimonial, index }: TestimonialCardProps) => {
   const bgColor = useColorModeValue("white", "gray.800");
   const textColor = useColorModeValue("gray.600", "gray.200");
 

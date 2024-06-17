@@ -12,6 +12,7 @@ import Footer from "../Footer/Footer";
 import "./HomePage.scss";
 import { Suspense, lazy } from "react";
 import { Skeleton } from "@chakra-ui/react";
+import { Explanation } from "../Explanation/Explanation";
 
 const SupportBtn = lazy(() =>
   import("../SupportBtn/SupportBtn").then((module) => ({
@@ -41,6 +42,7 @@ export const HomePage = () => {
         <SupportBtn />
       </Suspense>
       <HeroSection />
+      <Explanation />
       <Description />
       <BookInfo />
       <Services />
