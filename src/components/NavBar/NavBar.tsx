@@ -18,7 +18,7 @@ import logo from "../../assets/20231229_213655_0002.png";
 export function NavBar() {
   const [isMobile, setIsMobile] = useState(window.innerWidth < 768);
   const { isOpen, onOpen, onClose } = useDisclosure();
-  const btnRef = useRef();
+  const btnRef = useRef<HTMLButtonElement>(null);
 
   useEffect(() => {
     const handleResize = () => {
@@ -30,10 +30,12 @@ export function NavBar() {
     return () => window.removeEventListener("resize", handleResize);
   }, [onClose]);
 
-  function closeAndScroll(e) {
-    e.preventDefault();
+  function closeAndScroll() {
     onClose();
-    document.getElementById("about").scrollIntoView({ behavior: "smooth" });
+    const aboutElement = document.getElementById("about");
+    if (aboutElement) {
+      aboutElement.scrollIntoView({ behavior: "smooth" });
+    }
   }
 
   return (

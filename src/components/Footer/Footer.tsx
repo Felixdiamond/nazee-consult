@@ -3,6 +3,12 @@ import "./Footer.css";
 import { Facebook, Twitter, Linkedin, Instagram } from "lucide-react";
 
 export default function Footer() {
+  function scrollToAbout() {
+    const aboutElement = document.getElementById("about");
+    if (aboutElement) {
+      aboutElement.scrollIntoView({ behavior: "smooth" });
+    }
+  }
   return (
     <footer className="footer">
       <div className="container">
@@ -19,11 +25,7 @@ export default function Footer() {
               <Link to="/" className="footer-link">
                 Home
               </Link>
-              <span className="cursor-pointer footer-link" onClick={() => {
-                document.getElementById("about").scrollIntoView({
-                  behavior: "smooth"
-                });
-              }}>
+              <span className="cursor-pointer footer-link" onClick={scrollToAbout}>
                 About
               </span>
               <Link to="/services" className="footer-link">
