@@ -30,12 +30,21 @@ export function NavBar() {
     return () => window.removeEventListener("resize", handleResize);
   }, [onClose]);
 
-  function closeAndScroll() {
-    onClose();
+  function scrollToAbout() {
     const aboutElement = document.getElementById("about");
     if (aboutElement) {
       aboutElement.scrollIntoView({ behavior: "smooth" });
     }
+  }
+
+  function closeAndScroll() {
+    onClose();
+    setTimeout(() => {
+      const aboutElement = document.getElementById("about");
+      if (aboutElement) {
+        aboutElement.scrollIntoView({ behavior: "smooth" });
+      }
+    }, 300); // 300 milliseconds delay
   }
 
   return (
@@ -55,12 +64,24 @@ export function NavBar() {
           />
         ) : (
           <div className="nav-links flex gap-4 pr-4">
-            <Link to="/">Home</Link>
-            <Link to="/services">Services</Link>
-            <span onClick={closeAndScroll} className="cursor-pointer">
+            <Link to="/" className={!isMobile ? "desktop-link" : ""}>
+              Home
+            </Link>
+            <Link to="/services" className={!isMobile ? "desktop-link" : ""}>
+              Services
+            </Link>
+            <span
+              onClick={scrollToAbout}
+              className={`cursor-pointer ${!isMobile ? "desktop-link" : ""}`}
+            >
               About
             </span>
-            <a href="https://forms.gle/7EihcEP6FV3X5JQSA">Contact</a>
+            <a
+              href="https://forms.gle/7EihcEP6FV3X5JQSA"
+              className={!isMobile ? "desktop-link" : ""}
+            >
+              Contact
+            </a>
           </div>
         )}
       </div>
