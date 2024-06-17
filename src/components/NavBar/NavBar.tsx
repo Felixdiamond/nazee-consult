@@ -2,6 +2,7 @@ import { Mountain, Menu, X } from "lucide-react";
 import "./NavBar.css";
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
+import logo from '../../assets/20231229_213655_0002.png';
 
 export function NavBar() {
   const [isMobile, setIsMobile] = useState(window.innerWidth < 768);
@@ -25,7 +26,7 @@ export function NavBar() {
     <div className="absolute top-0 left-0 w-full z-50">
       <div className="nav-container p-4 py-6 flex items-center justify-between bg-white shadow-md">
         <div className="logo-div flex items-center justify-center gap-3 text-black">
-          <Mountain size={20} />
+          <img src={logo} alt="logo" className="logo-pic" />
           <span>Nazee Consult</span>
         </div>
         {isMobile ? (

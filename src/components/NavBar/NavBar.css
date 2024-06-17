@@ -115,3 +115,12 @@
 .mobile-nav .nav-links a::after {
   display: none;
 }
+
+.logo-pic {
+  @media (max-width: 768px) {
+    max-width: 3.5rem;
+    height: auto;
+  }
+  max-width: 6rem;
+  height: auto;
+}

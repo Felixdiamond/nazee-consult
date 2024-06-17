@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import "./Footer.css";
 import { Facebook, Twitter, Linkedin, Instagram } from "lucide-react";
 
@@ -9,22 +10,22 @@ export default function Footer() {
           <div className="footer-section">
             <h3 className="footer-title">Nazee Consult</h3>
             <p className="footer-description">
-              Something nice here. Something nice here. Something nice here.
+            Transform your ideas into reality with Nazee Consult's expert guidance.
             </p>
           </div>
           <div className="footer-section">
             <h4 className="footer-heading">Quick Links</h4>
             <nav className="footer-nav">
-              <a href="#" className="footer-link">
+              <Link to="/" className="footer-link">
                 Home
-              </a>
+              </Link>
               <a href="#" className="footer-link">
                 About
               </a>
-              <a href="#" className="footer-link">
+              <Link to="/services" className="footer-link">
                 Services
-              </a>
-              <a href="#" className="footer-link">
+              </Link>
+              <a href="https://forms.gle/7EihcEP6FV3X5JQSA" className="footer-link">
                 Contact
               </a>
             </nav>
@@ -41,7 +42,7 @@ export default function Footer() {
               <a href="#" className="footer-social-link">
                 <Linkedin className="footer-icon" />
               </a>
-              <a href="#" className="footer-social-link">
+              <a href="https://www.instagram.com/nazee_consult" className="footer-social-link">
                 <Instagram className="footer-icon" />
               </a>
             </div>
@@ -53,7 +54,7 @@ export default function Footer() {
               <br />
               City, State 12345
               <br />
-              Email: info@nazeeconsult.com
+              Email: Nazeeconsult@gmail.com
               <br />
               Phone: (123) 456-7890
             </p>

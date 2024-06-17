@@ -42,7 +42,7 @@ export function HeroSection() {
               <ArrowDown size={18} className="arrow-icon" />
             </button>
             <Link to="/services" className="learn-more">
-              Learn More
+              Contact us
             </Link>
           </div>
         </div>
