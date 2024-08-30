@@ -1,71 +1,31 @@
-import {
-  Box,
-  Flex,
-  Text,
-  Image,
-  VStack,
-  Heading,
-  Container,
-  useColorModeValue,
-} from "@chakra-ui/react";
-import { motion } from "framer-motion";
+import { motion } from 'framer-motion';
 import test1 from "../../assets/testimonial-1.jpg";
 import test2 from "../../assets/testimonial-2.jpg";
 
-const MotionBox = motion(Box);
-
-interface TestimonialCardProps {
-  name: string;
-  role: string;
-  image: string;
-  testimonial: string;
-  index: number;
-}
-
-const TestimonialCard = ({ name, role, image, testimonial, index }: TestimonialCardProps) => {
-  const bgColor = useColorModeValue("white", "gray.800");
-  const textColor = useColorModeValue("gray.600", "gray.200");
-
+const TestimonialCard = ({ name, role, image, testimonial, index }) => {
   return (
-    <MotionBox
-      bg={bgColor}
-      p={8}
-      borderRadius="xl"
-      boxShadow="xl"
-      height="100%"
+    <motion.div
+      className="bg-[#fefefe] p-8 rounded-xl shadow-lg h-full flex flex-col"
       initial={{ opacity: 0, y: 50 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.5, delay: index * 0.2 }}
-      whileHover={{ scale: 1.05 }}
-      _hover={{
-        boxShadow: "2xl",
-      }}
+      whileHover={{ scale: 1.02 }}
     >
-      <VStack spacing={6} align="start" height="100%">
-        <Flex align="center" width="100%">
-          <Box borderRadius="full" boxSize="80px" overflow="hidden" mr={4}>
-            <Image
-              src={image}
-              alt={name}
-              objectFit="cover"
-              width="100%"
-              height="100%"
-            />
-          </Box>
-          <VStack align="start" spacing={0}>
-            <Text fontWeight="bold" fontSize="xl">
-              {name}
-            </Text>
-            <Text color="orange.500" fontWeight="medium">
-              {role}
-            </Text>
-          </VStack>
-        </Flex>
-        <Text flex="1" color={textColor} fontSize="md" lineHeight="tall">
-          "{testimonial}"
-        </Text>
-      </VStack>
-    </MotionBox>
+      <div className="flex items-center mb-6">
+        <div className="w-20 h-20 rounded-full overflow-hidden mr-4">
+          <img
+            src={image}
+            alt={name}
+            className="w-full h-full object-cover"
+          />
+        </div>
+        <div>
+          <h3 className="font-bold text-xl text-gray-800">{name}</h3>
+          <p className="text-[#4e17a8] font-medium">{role}</p>
+        </div>
+      </div>
+      <p className="text-gray-600 flex-grow">"{testimonial}"</p>
+    </motion.div>
   );
 };
 
@@ -88,32 +48,27 @@ const ServiceTestimonial = () => {
   ];
 
   return (
-    <Box bg={useColorModeValue("gray.100", "gray.900")} py={16}>
-      <Container maxW="container.xl">
-        <VStack spacing={16} align="stretch">
-          <MotionBox
-            initial={{ opacity: 0, y: -50 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5 }}
-          >
-            <Heading as="h2" size="2xl" textAlign="center">
-              What Our Clients Say
-              <Text as="span" color="orange.500">
-                .
-              </Text>
-            </Heading>
-          </MotionBox>
+    <div className="bg-transparent py-16">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <motion.div
+          initial={{ opacity: 0, y: -50 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5 }}
+          className="text-center mb-12"
+        >
+          <h2 className="text-4xl sm:text:3xl font-bold text-gray-900">
+            What Our Clients Say
+            <span className="!text-[#4E17A8]">.</span>
+          </h2>
+        </motion.div>
 
-          <Flex direction={{ base: "column", lg: "row" }} gap={8}>
-            {testimonials.map((testimonial, index) => (
-              <Box key={index} flex="1">
-                <TestimonialCard {...testimonial} index={index} />
-              </Box>
-            ))}
-          </Flex>
-        </VStack>
-      </Container>
-    </Box>
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+          {testimonials.map((testimonial, index) => (
+            <TestimonialCard key={index} {...testimonial} index={index} />
+          ))}
+        </div>
+      </div>
+    </div>
   );
 };
 

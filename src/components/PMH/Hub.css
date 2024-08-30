@@ -1,118 +1,130 @@
 /* Hub.css */
 
-/* Mobile-first styles */
+/* Main container for the Hub section */
 .hub-container {
   display: flex;
   flex-direction: column;
-  background-color: #fff;
-  font-family: Arial, sans-serif;
-  border-radius: 10px;
+  font-family: "Inter", sans-serif;
+  border-radius: 15px;
   overflow: hidden;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  margin: 1rem;
+  margin: 2rem auto;
+  max-width: 1200px;
 }
 
+/* Container for the image */
 .hub-image-container {
+  flex: 1;
   overflow: hidden;
-  border-radius: 10px 10px 0 0;
+  border-radius: 15px;
+  @media (max-width: 768px) {
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+  }
 }
 
+/* Image styling */
 .hub-image {
   width: 100%;
-  height: auto;
+  height: 100%; /* Ensure image covers the height of its container */
   object-fit: cover;
-  border-radius: 10px 10px 0 0;
+  border-radius: 15px;
 }
 
+/* Content area styling */
 .hub-content {
-  padding: 1.5rem;
-}
-
-.hub-title {
-  font-size: 1.5rem;
+  flex: 1;
+  padding: 2rem;
   color: #333;
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* Center content vertically */
+}
+
+/* Title styling */
+.hub-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #4e17a8; /* Brand color */
   margin-bottom: 1rem;
+  position: relative;
 }
 
+/* Dot after title */
 .title-dot {
-  color: #ff610f;
+  color: #e67e22; /* Brand color */
 }
 
+/* Description styling */
 .hub-description {
   font-size: 1rem;
   line-height: 1.6;
   color: #666;
-  margin-bottom: 1.5rem;
+  margin-bottom: 2rem;
 }
 
+/* Features list styling */
 .hub-features {
   list-style: none;
   padding: 0;
-  margin-bottom: 1.5rem;
+  margin-bottom: 2rem;
 }
 
 .hub-features li {
-  margin-bottom: 0.5rem;
+  margin-bottom: 1rem;
   display: flex;
   align-items: center;
+  font-size: 1rem;
 }
 
-.icon {
-  margin-right: 0.5rem;
+.hub-icon {
+  font-size: 1.5rem;
+  color: #4e17a8; /* Brand color */
+  margin-right: 0.75rem;
 }
 
+/* Highlighted text styling */
 .highlight {
-  color: #ff610f;
+  color: #e67e22; /* Brand color */
   font-weight: bold;
 }
 
+/* Button styling */
 .hub-button {
   display: inline-block;
   padding: 0.75rem 1.5rem;
-  background-color: #4e17a8;
-  color: #fff;
+  background-color: #4e17a8; /* Brand color */
+  color: #ffffff;
   text-decoration: none;
-  border-radius: 4px;
+  border-radius: 5px;
   font-size: 1rem;
-  width: 100%;
   text-align: center;
-  font-family: 'Inter';
   font-weight: 600;
+  transition: background-color 0.3s ease, transform 0.3s ease;
 }
 
 .hub-button:hover {
-  background-color: #0056b3;
+  background-color: #3b0e7b;
 }
 
-/* Styles for larger screens */
+/* Responsive styles for larger screens */
 @media (min-width: 768px) {
   .hub-container {
     flex-direction: row;
-    align-items: stretch;
+    align-items: stretch; /* Stretch items to equal height */
     margin: 2rem auto;
     max-width: 1200px;
   }
 
   .hub-image-container {
-    flex: 1;
-    border-radius: 10px 0 0 10px;
-    margin: 20px 0 20px 20px;
-  }
-
-  .hub-image {
-    border-radius: 10px 0 0 10px;
+    margin-right: 2rem;
+    /* border-radius: 15px 0 0 15px; */
   }
 
   .hub-content {
-    flex: 1;
     padding: 2rem;
   }
 
   .hub-title {
-    font-size: 2rem;
-  }
-
-  .hub-button {
-    width: auto;
+    font-size: 3rem;
   }
 }

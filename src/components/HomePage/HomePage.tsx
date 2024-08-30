@@ -5,52 +5,30 @@ import { BookInfo } from "../BookInfo/BookInfo";
 import { Services } from "../Services/Services";
 import { Hub } from "../PMH/Hub";
 import { Team } from "../Team/Team";
-import { Metrics } from "../Metrics/Metrics";
+import { Metrics } from "@/components/Metrics/Metrics";
 import { PMBtn } from "../PMBtn/PMBtn";
 import { Testimonials } from "../Testimonials/Testimonials";
 import Footer from "../Footer/Footer";
-import "./HomePage.scss";
-import { Suspense, lazy } from "react";
-import { Skeleton } from "@chakra-ui/react";
+import { useBreakpointValue } from "@chakra-ui/react";
 import { Explanation } from "../Explanation/Explanation";
-
-const SupportBtn = lazy(() =>
-  import("../SupportBtn/SupportBtn").then((module) => ({
-    default: module.SupportBtn,
-  }))
-);
-
-const SupportBtnSkeleton = () => (
-  <Skeleton
-    position="fixed"
-    bottom="20px"
-    right="20px"
-    borderRadius="md"
-    width={{ base: "48px", md: "auto" }}
-    height={{ base: "48px", md: "auto" }}
-    minWidth={{ md: "100px" }}
-    minHeight={{ md: "40px" }}
-    zIndex={999}
-  />
-);
+import { MobileTeam } from "../Team/MobileTeam";
+import { SupportBtn } from "../SupportBtn/SupportBtn";
 
 export const HomePage = () => {
+  const isMobile = useBreakpointValue({ base: true, md: false });
+
   return (
     <>
       <NavBar />
-      <Suspense fallback={<SupportBtnSkeleton />}>
-        <SupportBtn />
-      </Suspense>
+      <SupportBtn />
       <HeroSection />
       <Explanation />
       <Description />
       <BookInfo />
       <Services />
       <Hub />
-      <div className="team-header">
-        <h1>Meet the Team.</h1>
-      </div>
-      <Team />
+      <div className="team-header"></div>
+      {isMobile ? <MobileTeam /> : <Team />}
       <Metrics />
       <PMBtn />
       <Testimonials />

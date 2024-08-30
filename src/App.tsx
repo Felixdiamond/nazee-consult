@@ -2,11 +2,11 @@ import { lazy, Suspense } from "react";
 import { ChakraProvider } from "@chakra-ui/react";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import "./App.css";
-import LoadingScreen from "./components/LoadingScreen/LoadingScreen";
+import LoadingScreen from "@/components/LoadingScreen/LoadingScreen";
 
-const HomePage = lazy(() => import("./components/HomePage/HomePage"));
+const HomePage = lazy(() => import("@/components/HomePage/HomePage"));
 const ServicesPage = lazy(
-  () => import("./components/ServicesPage/ServicesPage")
+  () => import("@/components/ServicesPage/ServicesPage")
 );
 
 function App() {

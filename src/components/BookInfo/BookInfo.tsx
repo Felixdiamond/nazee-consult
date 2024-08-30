@@ -40,15 +40,15 @@ export function BookInfo() {
             </CardBody>
           </CardContainer>
         </div>
-        <div className="book-info__description" data-aos="fade-left" data-aos-duration="600" data-aos-delay="200">
+        <div className="book-info__description">
           <p className="book-info__text">
             We are committed to providing our students with exceptional
             education resources while also delivering world class project
             management service
           </p>
           <p className="book-info__text">
-            This comprehensive guide offers an in-depth exploration of 30
-            essential skills that will elevate your project management practices
+            This comprehensive guide offers an in-depth exploration of <span className="txt-lows">30
+            essential skills </span> that will elevate your project management practices
             to new heights. Whether you're an aspiring project manager, a
             seasoned professional looking to sharpen your skills, or a leader
             aiming to drive your team's success, this book is your ultimate
@@ -63,7 +63,7 @@ export function BookInfo() {
             Your journey to becoming a top-tier project manager starts here.
           </p>
           <div className="book-info__button-container">
-            <Button className="book-info__button flex items-center justify-center gap-2 bg-[#7F00FF]">
+            <Button className="book-info__button flex items-center justify-center gap-2">
               <ShoppingCart size={20} />
               <a
                 href="https://coachneffect.selar.co/675858"

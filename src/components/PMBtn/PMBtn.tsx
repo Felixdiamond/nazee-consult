@@ -1,68 +1,49 @@
-import { useState, useEffect } from "react";
-import AOS from "aos";
-import "aos/dist/aos.css";
-import "./PMBtn.css";
+import React from "react";
+import { motion } from "framer-motion";
 
 export function PMBtn() {
-  useEffect(() => {
-    AOS.init();
-  }, []);
-
-  const [isAnimating, setIsAnimating] = useState(false);
-
-  const handleClick = () => {
-    setIsAnimating(true);
-    setTimeout(() => setIsAnimating(false), 1000);
-  };
-
   return (
-    <section className="pm-section">
-      <h2 className="pm-heading" data-aos="fade-up">
-        Ready to elevate your project?
-      </h2>
-      <p className="pm-subheading" data-aos="fade-up" data-aos-delay="100">
-        Looking to add some amazing project management talent to your team? At
-        Nazee Consult, we have a pool of highly skilled project managers and
-        eager interns ready to jump in and make a difference. Our candidates are
-        <b> well-trained, experienced, and up-to-date</b> with the latest
-        industry trends to help your projects succeed.
-      </p>
-      <div className="pm-btn-container">
-        <button
-          className={`pm-btn ${isAnimating ? "animate" : ""}`}
-          onClick={handleClick}
-          aria-label="Hire a Project Manager"
+    <section className="relative flex flex-col justify-center items-center py-20 px-4 bg-transparent overflow-hidden">
+      <motion.div
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6 }}
+        className="max-w-3xl mx-auto text-center"
+      >
+        <h2 className="font-inter font-bold text-3xl md:text-4xl text-[#4E17A8] mb-6">
+          Ready to elevate your project?
+        </h2>
+        <p className="font-inter font-normal text-base md:text-lg text-gray-600 mb-8">
+          At Nazee Consult, we have a pool of highly skilled project managers and eager interns ready to make a difference. Our candidates are{" "}
+          <span className="font-semibold text-[#e67e22]">well-trained, experienced, and up-to-date</span> with the latest industry trends.
+        </p>
+        <motion.div
+          whileHover={{ scale: 1.05 }}
+          whileTap={{ scale: 0.95 }}
         >
-          <span className="pm-btn-content">
+          <a
+            href="https://forms.gle/VHx6GrDad4NSeUUy8"
+            className="inline-flex items-center justify-center px-6 py-3 border border-transparent text-base font-medium rounded-md text-white bg-[#e67e22] hover:bg-[#d35400] focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[#e67e22] transition duration-150 ease-in-out"
+          >
             <svg
-              className="pm-btn-icon"
-              version="1.1"
-              id="_x32_"
+              className="w-5 h-5 mr-2"
+              fill="currentColor"
+              viewBox="0 0 20 20"
               xmlns="http://www.w3.org/2000/svg"
-              viewBox="0 0 512 512"
-              fill="#FFFFFF"
             >
-              <g id="SVGRepo_iconCarrier">
-                <g>
-                  <path
-                    className="st0"
-                    d="M453.794 429.808a122.261 122.261 0 0 0-8.25-20.188c-6.031-10.516-14.063-18.703-22.938-25.203-6.656-4.906-13.781-8.891-21.016-12.313-10.859-5.156-22.016-9.094-32.297-12.891-10.313-3.797-19.797-7.484-27.234-11.766l-0.828-0.469a49.106 49.106 0 0 1-7.156-4.938c-3.156-2.625-5.563-5.406-7.344-8.516-1.75-3.109-2.953-6.609-3.406-10.984-0.328-3.094-0.469-2.891-0.469-6 0-9.188 1.266-18.25 2.797-25.656 4.625-5.219 8.844-11.438 12.844-18.875 4.016-7.469 7.828-16.219 11.625-26.563 2.422-1.125 4.891-2.438 7.297-4.063 5.469-3.656 10.656-8.781 14.969-15.625 4.328-6.813 7.781-15.297 10.156-25.781 0.656-2.875 0.969-5.781 0.969-8.625 0.016-5.938-1.391-11.594-3.766-16.688-1.609-3.469-3.703-6.688-6.125-9.625 1.234-4.563 2.734-10.688 4.063-17.906 1.859-9.969 3.391-21.969 3.391-34.563 0-8.156-0.641-16.563-2.297-24.844-1.234-6.219-3.047-12.406-5.625-18.313-3.859-8.875-9.453-17.25-17.266-24.156-7.219-6.406-16.25-11.484-27.188-14.75-3.844-4.625-7.719-8.563-11.719-11.906-3.422-2.875-6.938-5.313-10.531-7.281-5.391-3-11-4.969-16.734-6.188s-11.578-1.656-17.641-1.656c-8.359 0.031-17.156 0.844-26.875 1.797-3.656 0.375-6.75 0.828-9.406 1.297-4 0.719-6.969 1.469-9.375 1.938-1.188 0.25-2.234 0.438-3.281 0.531-1.016 0.156-2.031 0.219-3.156 0.219-1.531 0-3.313-0.125-5.609-0.469-6.891-0.828-13.359-2.422-18.422-3.984-2.547-0.781-4.75-1.531-6.469-2.188-0.859-0.313-1.594-0.625-2.188-0.875-0.609-0.25-1.078-0.469-1.344-0.594-0.75-0.406-1.5-0.625-2.188-0.766C182.903 0.031 182.31 0 181.794 0c-1.078 0-1.828 0.156-2.469 0.313-0.594 0.172-1.063 0.344-1.469 0.516-0.813 0.328-1.438 0.672-2.063 1.047-1.156 0.688-2.219 1.453-3.391 2.344-2.016 1.563-4.25 3.5-6.609 5.781-3.516 3.406-7.297 7.531-10.719 12.016-1.719 2.234-3.344 4.594-4.797 7.016-1.453 2.438-2.734 4.922-3.734 7.531-4.969 12.906-8.281 24.813-10.313 35.781-2.031 11-2.828 21.063-2.828 30.297 0 15.109 2.125 27.922 4.141 38.734 0 0.531 0.031 1.016 0.063 1.531 0.063 1 0.156 2.063 0.281 3.156 0.156 1.625 0.375 3.313 0.5 4.703 0.063 0.703 0.125 1.328 0.172 1.828 0.031 0.219 0.047 0.438 0.047 0.594v0.156 0.031 0.016 0.922l2 8.844c-2.859 3.125-5.344 6.625-7.266 10.469-2.672 5.344-4.266 11.375-4.266 17.734 0 2.828 0.313 5.734 0.969 8.641v-0.031c1.594 7 3.656 13.094 6.156 18.406 3.688 7.984 8.406 14.188 13.641 18.844 4.047 3.625 8.359 6.266 12.641 8.219 3.813 10.344 7.594 19.063 11.609 26.531 4 7.469 8.219 13.656 12.844 18.875 1.516 7.438 2.797 16.5 2.797 25.703 0 3.109-0.141 2.891-0.469 5.984v0c-0.313 3-0.969 5.609-1.938 7.938-1.406 3.5-3.5 6.5-6.328 9.297-2.797 2.797-6.391 5.391-10.641 7.797l-3.328 1.781c-3.547 1.813-7.422 3.531-11.563 5.219-9.547 3.875-20.453 7.531-31.5 11.922-8.281 3.313-16.672 7.063-24.656 11.781-5.984 3.516-11.781 7.625-17.078 12.484-7.953 7.281-14.797 16.344-19.531 27.563-4.75 11.25-7.391 24.531-7.391 40.25 0 2.188 0.484 4.344 1.25 6.281 0.703 1.813 1.688 3.5 2.828 5.094 2.188 2.969 5 5.625 8.469 8.188 6.047 4.469 14.109 8.641 24.531 12.594 15.625 5.891 36.563 11.188 63.641 15.031 24.234 2.844 57.438 5.25 97.438 5.25 34.688 0 64.25-1.813 89.125-4.781 18.672-2.25 34.719-5.156 48.344-8.469 10.203-2.5 19.063-5.234 26.656-8.125 5.688-2.156 10.688-4.406 15.016-6.719 3.266-1.719 6.141-3.5 8.703-5.344 3.813-2.75 6.875-5.594 9.188-8.813 1.156-1.625 2.125-3.344 2.844-5.219 0.672-1.844 1.109-3.875 1.109-5.969 0-10.734-1.203-20.297-3.484-28.844z"
-                  ></path>
-                </g>
-              </g>
+              <path d="M13 6a3 3 0 11-6 0 3 3 0 016 0zM18 8a2 2 0 11-4 0 2 2 0 014 0zM14 15a4 4 0 00-8 0v3h8v-3zM6 8a2 2 0 11-4 0 2 2 0 014 0zM16 18v-3a5.972 5.972 0 00-.75-2.906A3.005 3.005 0 0119 15v3h-3zM4.75 12.094A5.973 5.973 0 004 15v3H1v-3a3 3 0 013.75-2.906z" />
             </svg>
-            <span className="pm-btn-text">
-              <a href="https://forms.gle/VHx6GrDad4NSeUUy8">
-                Hire a Project Manager
-              </a>
-            </span>
-          </span>
-        </button>
-      </div>
-      <div className="pm-background-shapes">
-        <div className="shape shape-1"></div>
-        <div className="shape shape-2"></div>
-        <div className="shape shape-3"></div>
+            Hire a Project Manager
+          </a>
+        </motion.div>
+      </motion.div>
+      <div className="absolute top-0 left-0 w-full h-full -z-10">
+        <svg className="absolute top-0 left-0 w-48 h-48 text-[#4E17A8] opacity-5" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+          <path fill="currentColor" d="M44.7,-76.4C58.8,-69.2,71.8,-59.1,79.6,-45.8C87.4,-32.6,90,-16.3,89.1,-0.5C88.1,15.3,83.5,30.6,75.2,43.9C66.9,57.3,55,68.7,41.2,75.7C27.3,82.7,11.7,85.3,-3.2,90.1C-18.1,94.8,-36.2,101.7,-50.7,97.4C-65.2,93.1,-76.1,77.7,-83.3,61.2C-90.5,44.7,-94,27,-96.1,9.1C-98.1,-8.8,-98.7,-26.8,-92.1,-42.2C-85.5,-57.6,-71.8,-70.3,-56.3,-76.9C-40.8,-83.5,-23.4,-84,-4.9,-76.4C13.6,-68.8,30.6,-83.6,44.7,-76.4Z" transform="translate(100 100)" />
+        </svg>
+        <svg className="absolute bottom-0 right-0 w-64 h-64 text-[#e67e22] opacity-5" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+          <path fill="currentColor" d="M39.9,-65.7C52.8,-60.5,65,-52,73.3,-40.4C81.7,-28.8,86.1,-14.4,84.6,-0.9C83.1,12.7,75.6,25.3,67.8,37.6C60,49.9,51.8,61.8,40.7,69.2C29.5,76.5,14.8,79.3,0.7,78.2C-13.3,77.1,-26.7,72.1,-39.3,65.3C-52,58.5,-64,49.9,-70.8,38.4C-77.6,26.8,-79.3,13.4,-79.1,0.1C-79,-13.1,-77,-26.2,-70.4,-36.6C-63.8,-47,-52.5,-54.6,-40.6,-60.3C-28.7,-66,-14.3,-69.8,-0.2,-69.5C14,-69.2,28,-71,39.9,-65.7Z" transform="translate(100 100)" />
+        </svg>
       </div>
     </section>
   );

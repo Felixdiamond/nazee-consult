@@ -4,9 +4,7 @@ import AOS from "aos";
 import "aos/dist/aos.css";
 import { useEffect } from "react";
 import { BackgroundBeams } from "../ui/background-beams";
-// import { Explanation } from "../Explanation/Explanation";
 import { Link } from "react-router-dom";
-// import { RefObject } from "react";
 
 export function HeroSection() {
   useEffect(() => {
@@ -16,13 +14,6 @@ export function HeroSection() {
       once: true,
     });
   }, []);
-
-  // const expRef = React.useRef<HTMLDivElement>(null);
-
-  // const scrollDown = (ref: RefObject<HTMLDivElement>) => {
-  //   ref.current?.scrollIntoView({ behavior: "smooth" });
-  // };
-
   return (
     <>
       <div className="hero-section">
@@ -41,9 +32,6 @@ export function HeroSection() {
               <Link to={"/services"}>Our Services</Link>
               <ArrowRight size={18} className="arrow-icon" />
             </button>
-            {/* <Link to="/services" className="learn-more">
-              Our services
-            </Link> */}
           </div>
         </div>
         <BackgroundBeams />

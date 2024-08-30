@@ -1,124 +1,74 @@
-import {
-  Box,
-  Container,
-  Heading,
-  Text,
-  VStack,
-  HStack,
-  Flex,
-  SimpleGrid,
-  useColorModeValue,
-  List,
-  ListItem,
-  ListIcon,
-  Button,
-} from "@chakra-ui/react";
-import { CheckCircleIcon } from "@chakra-ui/icons";
-import { Rocket, TrendingUp } from "lucide-react";
-import "./MainServices.css";
+import { Rocket, TrendingUp, Check } from "lucide-react";
 
 export function MainServices() {
   return (
-    <Box bg="gray.50" py={20}>
-      <Container maxW="container.xl">
-        <VStack spacing={16}>
-          <Flex
-            direction={{ base: "column", md: "row" }}
-            align="center"
-            justify="space-between"
-          >
-            <Box flex="1" pr={{ base: 0, md: 10 }} mb={{ base: 10, md: 0 }}>
-              <Heading
-                as="h1"
-                size="3xl"
-                lineHeight="shorter"
-                mb={6}
-                bgGradient="linear(to-r, #31BBDA, #4E17A8)"
-                bgClip="text"
-              >
-                Elevate Your Project Management Career
-              </Heading>
-              <Text fontSize="xl" color="gray.600">
-                At Nazee Consult, we're dedicated to nurturing the next
-                generation of project management leaders.
-              </Text>
-            </Box>
-            <Box
-              flex="1"
-              bg="white"
-              p={10}
-              borderRadius="lg"
-              boxShadow="xl"
-              bgGradient="linear(to-br, #31BBDA, #4E17A8)"
-              color="white"
-            >
-              <VStack spacing={6} align="start">
-                <HStack spacing={4}>
-                  <Rocket size={40} />
-                  <Text fontSize="2xl" fontWeight="bold">
-                    Accelerate Your Growth
-                  </Text>
-                </HStack>
-                <Text fontSize="lg">
-                  Our tailored services are designed to equip you with the
-                  skills, knowledge, and confidence needed to excel in this
-                  dynamic field.
-                </Text>
-                <HStack spacing={4}>
-                  <TrendingUp size={40} />
-                  <Text fontSize="2xl" fontWeight="bold">
-                    Achieve Your Potential
-                  </Text>
-                </HStack>
-                <Text fontSize="lg">
-                  With expert guidance and practical resources, we'll help you
-                  navigate the complexities of project management and emerge as
-                  a standout professional.
-                </Text>
-              </VStack>
-            </Box>
-          </Flex>
+    <section className="py-24 bg-transparent">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+        {/* Hero Section */}
+        <div className="text-center mb-20">
+          <h1 className="text-3xl md:text-5xl lg:text-5xl sm font-extrabold text-gray-900 mb-6 leading-tight">
+            Elevate Your Project Management Career
+          </h1>
+          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+            At Nazee Consult, we're dedicated to nurturing the next generation of project management leaders.
+          </p>
+        </div>
 
-          <SimpleGrid columns={{ base: 1, md: 2, lg: 3 }} spacing={10}>
-            <ServiceCard />
-            {/* Add more ServiceCard components here for other services */}
-          </SimpleGrid>
-        </VStack>
-      </Container>
-    </Box>
+        {/* Services Section */}
+        <div className="grid md:grid-cols-2 gap-10 mb-20">
+          <ServiceCard
+            icon={<Rocket size={48} className="text-indigo-600" />}
+            title="Accelerate Your Growth"
+            description="Our tailored services are designed to equip you with the skills, knowledge, and confidence needed to excel in this dynamic field."
+            color="indigo"
+          />
+          <ServiceCard
+            icon={<TrendingUp size={48} className="text-orange-500" />}
+            title="Achieve Your Potential"
+            description="With expert guidance and practical resources, we'll help you navigate the complexities of project management and emerge as a standout professional."
+            color="orange"
+          />
+        </div>
+
+        {/* Service Details Section */}
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-10">
+          <ServiceDetail />
+          {/* Add more ServiceDetail components here for other services */}
+        </div>
+      </div>
+    </section>
   );
 }
 
-function ServiceCard() {
+function ServiceCard({ icon, title, description, color }) {
+  return (
+    <div className={`bg-white p-8 rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300 border-t-4 border-${color}-500`}>
+      <div className="flex flex-col sm:flex-row items-start sm:items-center gap-6 mb-6">
+        <div className={`p-3 bg-${color}-100 rounded-full`}>{icon}</div>
+        <div>
+          <h2 className={`text-2xl font-bold text-${color}-600 mb-2`}>{title}</h2>
+          <p className="text-gray-600">{description}</p>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+function ServiceDetail() {
   function handleBookCall() {
     window.open('https://paystack.com/pay/oneononecall');
   }
-  return (
-    <VStack
-      bg={useColorModeValue("white", "gray.800")}
-      p={8}
-      borderRadius="lg"
-      boxShadow="lg"
-      spacing={5}
-      align="start"
-      borderTop="4px solid"
-      borderTopColor="#FF610F"
-    >
-      <Heading as="h3" size="lg" color="#4E17A8">
-        Advisory Call
-      </Heading>
-      <Text fontWeight="medium" color="gray.500">
-        30 minutes
-      </Text>
-      <Text>
-        Personalized, one-on-one expert guidance to propel your project
-        management career forward.
-      </Text>
 
-      <Heading as="h4" size="md" color="#31BBDA" mt={4}>
-        How We Empower You:
-      </Heading>
-      <List spacing={3}>
+  return (
+    <div className="bg-white p-8 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-200">
+      <h3 className="text-3xl font-bold text-[#4e17a8] mb-2">Advisory Call</h3>
+      <p className="text-gray-600 font-medium mb-6">30 minutes</p>
+      <p className="text-gray-700 mb-8">
+        Personalized, one-on-one expert guidance to propel your project management career forward.
+      </p>
+
+      <h4 className="text-xl font-semibold text-[#4e17a8] mb-4">How We Empower You:</h4>
+      <ul className="space-y-3 mb-8">
         {[
           "Chart your transition into Project Management",
           "Strategize landing your first PM role",
@@ -127,28 +77,19 @@ function ServiceCard() {
           "Master interview techniques and CV optimization",
           "Gain project-specific expertise (budgets, risk management, etc.)",
         ].map((item, index) => (
-          <ListItem key={index}>
-            <HStack align="start">
-              <ListIcon as={CheckCircleIcon} color="#FF610F" mt={1} />
-              <Text>{item}</Text>
-            </HStack>
-          </ListItem>
+          <li key={index} className="flex items-start space-x-3">
+            <Check size={24} className="text-indigo-600 flex-shrink-0" />
+            <span className="text-gray-700">{item}</span>
+          </li>
         ))}
-      </List>
+      </ul>
 
-      <Button
-        colorScheme="orange"
-        size="lg"
-        mt={4}
-        alignSelf="center"
+      <button
+        className="w-full bg-gradient-to-r from-indigo-700 to-[#4e17a8] text-white py-3 px-6 rounded-lg shadow-md transition-all duration-300 transform hover:scale-105 font-semibold"
         onClick={handleBookCall}
-        _hover={{
-          transform: "translateY(-2px)",
-          boxShadow: "lg",
-        }}
       >
         Book Your Call
-      </Button>
-    </VStack>
+      </button>
+    </div>
   );
 }

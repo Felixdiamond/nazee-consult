@@ -1,5 +1,5 @@
 import { useEffect, useState, useRef } from "react";
-import { LineChart, Users } from "lucide-react";
+import { HelpCircle, Users } from "lucide-react";
 import "./Explanation.css";
 import { TextGenerateEffect } from "../ui/text-generate-effect";
 import AOS from "aos";
@@ -23,7 +23,7 @@ export function Explanation() {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
             setIsInView(true);
-            setHeadingSeen(true); // Set headingSeen to true when the section is in view
+            setHeadingSeen(true);
           } else {
             setIsInView(false);
           }
@@ -63,7 +63,8 @@ export function Explanation() {
     <article className="explanation" ref={explanationRef} data-aos="fade-up">
       <section className="explanation__section" data-aos="fade-right">
         <h2 className="explanation__heading">
-          <LineChart className="explanation__icon" size={25} />
+          <HelpCircle className="explanation__icon" size={40} />
+
           {(isInView || headingSeen) && (
             <TextGenerateEffect words="What is Project Management?" />
           )}
@@ -74,20 +75,22 @@ export function Explanation() {
           ensuring they stay on track, on time, and within budget.
         </p>
         <p className="explanation__paragraph">
-          Without it, even simple tasks can become chaotic and inefficient.
+          Without it, even simple tasks can become{" "}
+          <span className="txt-highs">chaotic and inefficient.</span>
         </p>
       </section>
 
       <section className="explanation__section" data-aos="fade-left">
         <h2 className="explanation__heading">
-          <Users className="explanation__icon" size={25} />
+          <Users className="explanation__icon" size={40} />
           {(isInView || headingSeen) && (
             <TextGenerateEffect words="Who are Project Managers?" />
           )}
         </h2>
         <p className="explanation__paragraph">
-          They are the driving force behind successful projects, guiding teams
-          from inception to completion with their unique blend of skills.
+          They are the <span className="txt-lows"> driving force </span> behind successful projects,
+          guiding teams from inception to completion with their unique blend of
+          skills.
         </p>
         <div className="explanation__highlight-container">
           <p className="explanation__highlight">

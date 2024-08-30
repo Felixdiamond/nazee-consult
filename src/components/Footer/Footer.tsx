@@ -56,13 +56,13 @@ export default function Footer() {
           <div className="footer-section">
             <h4 className="footer-heading">Contact Us</h4>
             <p className="footer-contact">
-              20 Janson Rd
+              20 Editi street
               <br />
-              London E15 1TG, UK
+              Ikeja, Lagos
               <br />
               Email: Nazeeconsult@gmail.com
               <br />
-              Phone: +44 7836 776530
+              Phone: +234 803 723 2625
             </p>
           </div>
         </div>

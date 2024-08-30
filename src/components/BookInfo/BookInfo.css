@@ -1,82 +1,115 @@
+/* Main container for the book info */
 .book-info {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   min-height: 100vh;
-  background-color: #f5f5f5;
   font-family: "Montserrat", sans-serif;
   padding: 2rem;
-  @media (max-width: 768px) {
-    padding: 1rem;
-  }
 }
 
+/* Heading styling */
 .book-info__heading {
-  font-size: 2rem;
+  font-size: 2.5rem;
   font-weight: 700;
-  margin-bottom: 2rem;
+  margin-bottom: 3rem;
   text-align: center;
 }
 
+/* Content area styling */
 .book-info__content {
   display: flex;
   flex-direction: row;
   align-items: center;
-  background-color: #ffffff;
-  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
-  border-radius: 10px;
+  background-color: #f4f4f4;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Slightly stronger shadow */
+  border-radius: 15px; /* Slightly rounded corners */
   max-width: 1200px;
   padding: 2rem;
+  transition: transform 0.3s ease;
 }
 
+.book-info__content:hover {
+  transform: scale(1.02); /* Slight zoom effect on hover */
+}
+
+/* Card styling */
 .book-info__card {
   margin-right: 2rem;
 }
 
+/* Book image styling */
 .book-info__image {
   width: 100%;
   height: auto;
-  border-radius: 5px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Enhanced shadow */
+  transition: transform 0.3s ease; /* Smooth transition for hover effect */
 }
 
+.book-info__image:hover {
+  transform: scale(1.05); /* Slight zoom effect on hover */
+}
+
+/* Description section styling */
 .book-info__description {
   padding: 2rem;
   line-height: 1.6;
   max-width: 600px;
 }
 
+/* Text styling */
 .book-info__text {
   font-size: 1rem;
   margin-bottom: 1rem;
+  color: #333333; /* Dark text color for readability */
 }
 
+/* Title styling */
 .book-info__title {
-  font-size: 2rem;
+  font-size: 2.2rem;
   font-weight: 700;
   margin-bottom: 1rem;
   color: #333333;
   text-align: center;
 }
 
+/* Tagline styling */
 .book-info__tagline {
   font-weight: 600;
   margin-top: 1rem;
+  color: #3d0e8b;
 }
 
+/* Button container styling */
 .book-info__button-container {
   display: flex;
   justify-content: center;
-  margin-top: 1.5rem;
+  margin-top: 2rem;
 }
 
+/* Button styling */
 .book-info__button {
   align-items: center;
   justify-content: center;
+  background-color: #3d0e8b;
   color: #ffffff;
   border: none;
   cursor: pointer;
+  padding: 0.5rem 1.5rem;
+  border-radius: 5px;
+  transition: background-color 0.3s ease, transform 0.3s ease; /* Smooth transitions */
+  width: 80%;
+  @media (max-width: 768px) {
+    width: 100%;
+  }
+}
+
+.book-info__button:hover {
+  background-color: #3b0e7b;
+  /* sleek animation on hover */
+  transform: translateY(-2px);
 }
 
 .book-info__button a {
@@ -84,19 +117,21 @@
   text-decoration: none;
 }
 
+/* Card container specific styles */
 .cc {
   width: 100%;
   max-width: 400px;
   height: auto;
 }
 
+/* Responsive adjustments */
 @media (max-width: 768px) {
   .book-info__heading {
-    font-size: 1.5rem;
+    font-size: 1.8rem;
   }
 
   .book-info__title {
-    font-size: 1.2rem;
+    font-size: 1.4rem;
   }
 
   .book-info__content {
@@ -139,4 +174,9 @@
   .cc {
     max-width: 300px;
   }
+}
+
+.txt-lows {
+  color: #3d0e8b;
+  font-weight: 600;
 }

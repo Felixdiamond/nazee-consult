@@ -1,0 +1,118 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
+
+$primary-color: #4E17A8;
+$secondary-color: #e67e22;
+$bg-color: #f0f0f0;
+$text-color: #333;
+
+.team-section.mobile {
+  font-family: 'Poppins', sans-serif;
+  padding: 2rem;
+
+  h2 {
+    text-align: center;
+    font-size: 2rem;
+    font-weight: 700;
+    color: $primary-color;
+    margin-bottom: 2rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    position: relative;
+
+    &::after {
+      content: '';
+      position: absolute;
+      bottom: -8px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 40px;
+      height: 2px;
+      background-color: $secondary-color;
+    }
+  }
+
+  .team-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  .team-member {
+    background-color: white;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    transition: height 0.4s ease;
+    padding-bottom: 1rem;
+
+    .member-content {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .member-image {
+      height: 200px;
+      overflow: hidden;
+
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+    }
+
+    .member-info {
+      padding: 1rem;
+      text-align: center;
+
+      h3 {
+        font-size: 1.2rem;
+        font-weight: 600;
+        color: $primary-color;
+        margin-bottom: 0.5rem;
+      }
+
+      .position {
+        font-size: 0.9rem;
+        color: $secondary-color;
+      }
+
+      .description {
+        font-size: 0.9rem;
+        color: $text-color;
+        line-height: 1.5;
+        margin-bottom: 1rem;
+      }
+
+      .social-links {
+        display: flex;
+        justify-content: center;
+        gap: 1rem;
+        margin-top: 1rem;
+
+        a {
+          color: $primary-color;
+          transition: color 0.3s ease;
+
+          &:hover {
+            color: $secondary-color;
+          }
+        }
+      }
+    }
+  }
+}
+
+.readmore-icon {
+    margin: 0 auto;
+    position: relative;
+    top: 1rem;
+    color: #4E17A8;
+}
+
+.top-info {
+    margin-top: 0.5rem;
+}
