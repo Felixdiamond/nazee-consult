@@ -1,8 +1,14 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { ChevronDown, ChevronRight } from "lucide-react";
 
-const Module = ({ number, title, topics }) => {
+interface ModuleProps {
+  number: number;
+  title: string;
+  topics: string[];
+}
+
+const Module = ({ number, title, topics }: ModuleProps) => {
   const [isOpen, setIsOpen] = useState(false);
 
   return (

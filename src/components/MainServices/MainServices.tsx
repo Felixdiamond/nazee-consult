@@ -40,7 +40,14 @@ export function MainServices() {
   );
 }
 
-function ServiceCard({ icon, title, description, color }) {
+interface ServiceCardProps {
+  icon: React.ReactNode;
+  title: string;
+  description: string;
+  color: string;
+}
+
+function ServiceCard({ icon, title, description, color }: ServiceCardProps) {
   return (
     <div className={`bg-white p-8 rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300 border-t-4 border-${color}-500`}>
       <div className="flex flex-col sm:flex-row items-start sm:items-center gap-6 mb-6">

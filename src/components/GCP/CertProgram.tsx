@@ -1,12 +1,17 @@
-import React from 'react';
 import { motion } from 'framer-motion';
 import { CheckCircle, Users, BookOpen, PenTool, ClipboardList, ChevronRight } from "lucide-react";
 
-const IconWrapper = ({ children }) => (
+interface FeatureItemProps {
+  icon: React.ReactNode;
+  title: string;
+  description: string;
+}
+
+const IconWrapper = ({ children }: { children: React.ReactNode }) => (
   <span className="text-orange-500 mr-2">{children}</span>
 );
 
-const FeatureItem = ({ icon, title, description }) => (
+const FeatureItem = ({ icon, title, description }: FeatureItemProps) => (
   <motion.li
     initial={{ opacity: 0, y: 20 }}
     animate={{ opacity: 1, y: 0 }}

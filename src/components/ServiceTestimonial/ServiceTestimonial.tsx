@@ -2,7 +2,15 @@ import { motion } from 'framer-motion';
 import test1 from "../../assets/testimonial-1.jpg";
 import test2 from "../../assets/testimonial-2.jpg";
 
-const TestimonialCard = ({ name, role, image, testimonial, index }) => {
+interface TestimonialCardProps {
+  name: string;
+  role: string;
+  image: string;
+  testimonial: string;
+  index: number;
+}
+
+const TestimonialCard = ({ name, role, image, testimonial, index }: TestimonialCardProps) => {
   return (
     <motion.div
       className="bg-[#fefefe] p-8 rounded-xl shadow-lg h-full flex flex-col"

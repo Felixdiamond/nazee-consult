@@ -50,13 +50,13 @@ export function Description() {
               <li key={index}>
                 <CardContainer className="value-card">
                   <CardBody className="value-card-body">
-                    <CardItem translateZ="20" className="value-icon-container">
+                    <CardItem translateZ={20} className="value-icon-container">
                       <Icon className="value-icon" strokeWidth={2} />
                     </CardItem>
-                    <CardItem translateZ="40" as="h3" className="value-title">
+                    <CardItem translateZ={40} as="h3" className="value-title">
                       {text}
                     </CardItem>
-                    <CardItem translateZ="60" as="p" className="value-description">
+                    <CardItem translateZ={60} as="p" className="value-description">
                       {description}
                     </CardItem>
                   </CardBody>

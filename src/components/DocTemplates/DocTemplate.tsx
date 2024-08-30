@@ -9,7 +9,13 @@ const templateDescriptions = {
   "Project Closure": "Conclude your projects professionally, capturing lessons learned, final deliverables, and project success metrics.",
 };
 
-const TemplateItem = ({ title, description, index }) => (
+interface TemplateItemProps {
+  title: string;
+  description: string;
+  index: number;
+}
+
+const TemplateItem = ({ title, description, index }: TemplateItemProps) => (
   <motion.li
     initial={{ opacity: 0, y: 20 }}
     animate={{ opacity: 1, y: 0 }}

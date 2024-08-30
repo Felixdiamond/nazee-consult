@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { ChevronDown, Facebook, Linkedin, Twitter } from "lucide-react";
 import victor from "../../assets/osazee-victor.avif";
@@ -58,7 +58,19 @@ const teamMembers = [
   },
 ];
 
-const MobileTeamMember = ({ member, isActive, onClick }) => (
+interface MobileTeamMemberProps {
+  member: {
+    name: string;
+    position: string;
+    image: string;
+    socialLinks: { icon: any; link: string }[];
+    shortDesc: string;
+  };
+  isActive: boolean;
+  onClick: () => void;
+}
+
+const MobileTeamMember = ({ member, isActive, onClick }: MobileTeamMemberProps) => (
   <motion.div
     className={`team-member ${isActive ? "active" : ""}`}
     onClick={onClick}
@@ -107,7 +119,7 @@ const MobileTeamMember = ({ member, isActive, onClick }) => (
 );
 
 export function MobileTeam() {
-  const [activeIndex, setActiveIndex] = useState(null);
+  const [activeIndex, setActiveIndex] = useState<number | null>(null);
 
   return (
     <section className="team-section mobile">

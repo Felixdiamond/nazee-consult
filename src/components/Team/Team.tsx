@@ -54,7 +54,19 @@ const teamMembers = [
   },
 ];
 
-const TeamMember = ({ member, isActive, onClick }) => (
+interface TeamMemberProps {
+  member: {
+    name: string;
+    position: string;
+    image: string;
+    socialLinks: { icon: any; link: string }[];
+    shortDesc: string;
+  };
+  isActive: boolean;
+  onClick: () => void;
+}
+
+const TeamMember: React.FC<TeamMemberProps> = ({ member, isActive, onClick }) => (
   <motion.div
     className={`team-member ${isActive ? 'active' : ''}`}
     onClick={onClick}
